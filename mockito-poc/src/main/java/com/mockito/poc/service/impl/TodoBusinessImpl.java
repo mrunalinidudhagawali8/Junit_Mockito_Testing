@@ -10,7 +10,7 @@ public class TodoBusinessImpl {
 
 	private TodoService todoService;
 
-	TodoBusinessImpl(TodoService todoService) {
+	public TodoBusinessImpl(TodoService todoService) {
 		this.todoService = todoService;
 	}
 
@@ -18,7 +18,7 @@ public class TodoBusinessImpl {
 		List<String> filteredTodos = new ArrayList<String>();
 		List<String> allTodos = todoService.retrieveTodos(user);
 		for (String todo : allTodos) {
-			if (todo.contains("Spring")) {
+			if (todo.contains("Spring")||todo.contains("spring")) {
 				filteredTodos.add(todo);
 			}
 		}
